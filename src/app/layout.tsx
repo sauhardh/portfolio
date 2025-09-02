@@ -28,7 +28,7 @@ export default function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning>
       <body
-        className={`${firaSans.variable} ${alfaSans.variable} antialiased`}
+        className={`${firaSans.variable} ${alfaSans.variable} antialiased m-5`}
       >
         <ThemeProvider
           attribute="class"

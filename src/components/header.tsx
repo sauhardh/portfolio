@@ -4,7 +4,7 @@ import { DownloadMe } from "./download-me"
 
 export function Header(): React.JSX.Element {
     return (
-        <div className="justify-between  flex p-5">
+        <div className="justify-between flex ">
             <DownloadMe />
             <ThemeToggle />
         </div >
