@@ -8,6 +8,7 @@ const HERO_TEXT: string[] = [
 ]
 
 const GITHUB_USERNAME: string = "sauhardh"
+const USER_GITHUB_LINK: string = `https://www.github.com/${GITHUB_USERNAME}`
 
 const PROJECTS: Record<string, string> = {
     "torrex": `${GITHUB_USERNAME}`,
@@ -17,4 +18,4 @@ const PROJECTS: Record<string, string> = {
     "server": "the-aether-project"
 }
 
-export { RESUME_LINK, HERO_TEXT, GITHUB_USERNAME, PROJECTS }
+export { RESUME_LINK, HERO_TEXT, GITHUB_USERNAME, PROJECTS, USER_GITHUB_LINK }

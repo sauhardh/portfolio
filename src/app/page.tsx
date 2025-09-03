@@ -1,8 +1,7 @@
 import Image from "next/image";
 import { Header } from "@/components/header";
 import Hero from "@/components/hero";
-// import ProjectCard from "@/components/project_card";
-import Project from "@/components/projects";
+import ProjectServer from "@/components/ProjectsServer";
 
 export default function Home() {
   return (
@@ -11,9 +10,8 @@ export default function Home() {
 
       <main className="flex-col justify-center text-center my-10 mt-35">
         <Hero />
-        <Project />
+        <ProjectServer />
       </main>
-
 
       <footer>
       </footer>

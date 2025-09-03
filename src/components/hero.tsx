@@ -2,6 +2,8 @@
 import * as React from "react"
 import Image from "next/image"
 import { HERO_TEXT } from "@/constants"
+import { span } from "framer-motion/client"
+import { LANGUAGE_COLORS } from "@/languages"
 
 export default function Hero(): React.JSX.Element {
     return (
@@ -16,14 +18,31 @@ export default function Hero(): React.JSX.Element {
                 />
             </div>
 
-            <div className="mt-20">
+            <div className="mt-20 cursor-pointer">
                 {HERO_TEXT.map((each, i) => (
                     <span key={i}>
-                        {each}{each.length >= 12 ? <br /> :
+                        {
+                            each.split("").map((letter, i) => (
+                                <span
+                                    key={i}
+                                    className="hover:font-alfa hover:font-bold hover:scale-400 hover:italic"
+                                    style={{ color: "inherit" }}
+                                    onMouseEnter={(e) => {
+                                        e.currentTarget.style.color = Object.values(LANGUAGE_COLORS)[i];
+                                    }}
+                                    onMouseLeave={(e) => {
+                                        e.currentTarget.style.color = "inherit"
+                                    }}
+                                >
+                                    {letter}
+                                </span>
+                            ))
 
+                        }{each.length >= 12 ?
+                            <br /> :
                             HERO_TEXT.length != i + 1 ?
-                                <span className="font-black">&nbsp;&nbsp;.&nbsp;</span>
-                                : " "
+                                <span className="font-black">&nbsp;&nbsp;.&nbsp;</span> :
+                                " "
                         }
                     </span>
                 ))}

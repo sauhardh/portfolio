@@ -13,13 +13,14 @@ export default async function GitGetThisRepo(user_name: string, repo_name: strin
             method: "GET",
             headers: {
                 Accept: "application/vnd.github+json",
-                "X-GitHub-Api-Version": "2022-11-28"
+                "X-GitHub-Api-Version": "2022-11-28",
+                Authorization: `Bearer ${process.env.GITHUB_TOKEN}`
             }
         });
 
         if (!response.ok) {
-            console.error(`GITHUB API ERROR: ${response.status} -> ${response.statusText}`);
-            return null;
+            console.log(`GITHUB API ERROR: ${response.status} -> ${response.statusText}`)
+            return null
         }
         const res = await response.json();
 

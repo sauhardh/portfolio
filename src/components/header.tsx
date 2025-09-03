@@ -1,6 +1,6 @@
 import * as React from "react"
-import { ThemeToggle } from "./theme-toggle"
-import { DownloadMe } from "./download-me"
+import { ThemeToggle } from "./items/theme-toggle"
+import { DownloadMe } from "./items/download-me"
 
 export function Header(): React.JSX.Element {
     return (
