@@ -137,3 +137,27 @@
     @apply bg-background text-foreground;
   }
 }
+
+.blog-content-header h3,
+h1,
+h2 {
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+}
+
+.blog-content-paragraph p {
+  margin-bottom: 1rem;
+}
+
+.blog-content-anchor a {
+  text-decoration: underline;
+}
+
+.blog-content-quote blockquote {
+  /* background-color: rgb(211, 211, 211); */
+  border-left: 3px solid aliceblue;
+  padding: 10px 20px;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+  font-style: italic;
+}

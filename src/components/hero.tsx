@@ -2,7 +2,6 @@
 import * as React from "react"
 import Image from "next/image"
 import { HERO_TEXT } from "@/constants"
-import { span } from "framer-motion/client"
 import { LANGUAGE_COLORS } from "@/languages"
 
 export default function Hero(): React.JSX.Element {
@@ -37,7 +36,6 @@ export default function Hero(): React.JSX.Element {
                                     {letter}
                                 </span>
                             ))
-
                         }{each.length >= 12 ?
                             <br /> :
                             HERO_TEXT.length != i + 1 ?

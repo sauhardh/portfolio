@@ -9,13 +9,13 @@ const HERO_TEXT: string[] = [
 
 const GITHUB_USERNAME: string = "sauhardh"
 const USER_GITHUB_LINK: string = `https://www.github.com/${GITHUB_USERNAME}`
-
+const USER_BLOG_LINK: string = "https://medium.com/feed/@_Kafle"
 const PROJECTS: Record<string, string> = {
     "torrex": `${GITHUB_USERNAME}`,
     "CodeRoom": `${GITHUB_USERNAME}`,
     "zizz": `${GITHUB_USERNAME}`,
     "dlm_rust": `${GITHUB_USERNAME}`,
-    "server": "the-aether-project"
+    "metrics": `${GITHUB_USERNAME}`
 }
 
-export { RESUME_LINK, HERO_TEXT, GITHUB_USERNAME, PROJECTS, USER_GITHUB_LINK }
+export { RESUME_LINK, HERO_TEXT, GITHUB_USERNAME, PROJECTS, USER_GITHUB_LINK, USER_BLOG_LINK }
