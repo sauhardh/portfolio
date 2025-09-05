@@ -14,12 +14,10 @@ type HeadingType = {
     border_color?: string
 }
 
-
 export default function Heading({ heading, Icon, class_name, border_color }: HeadingType) {
     return (
         <div className={`font-bold pt-8 pb-5 ${class_name}`}>
             <div className="w-max group relative cursor-pointer px-2">
-
                 <div className="flex gap-2 relative z-10">
                     <h1>{heading}</h1>
                     {Icon && <Icon />}

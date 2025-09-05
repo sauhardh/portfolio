@@ -1,8 +1,7 @@
 "use client"
 import * as React from "react"
 import { useEffect, useState } from "react"
-import BlogsParser, { BlogInfo } from "@/lib/blog"
-import Heading from "./heading"
+import { BlogInfo } from "@/lib/blog"
 import Image from "next/image"
 import Link from "next/link"
 
@@ -19,7 +18,6 @@ function getFirstImage(html: string | undefined): string | null {
 }
 
 export default function BlogCard({ blog }: BlogCardProps) {
-
     const [img, setImage] = useState<string | null>(null);
     const [date, setDate] = useState<string>("");
     useEffect(() => {
@@ -37,7 +35,6 @@ export default function BlogCard({ blog }: BlogCardProps) {
     return (
         <div className="group border-1 border-border rounded-xs bg-card shadow-md p-4 w-full h-full content-center [grid-row:span_30] hover:scale-99">
             <Link href={`/blogs/${blog.id}`}>
-
                 <div className="flex flex-col">
                     {
                         img &&

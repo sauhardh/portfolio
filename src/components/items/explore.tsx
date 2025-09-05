@@ -1,14 +1,14 @@
 "use client"
-
 import * as React from "react"
 import { Maximize2 } from "lucide-react"
 
 type ExploreParams = {
-    platform?: string
-    link?: string
+    platform?: string,
+    link?: string,
+    explicit_content?: string
 }
 
-export default function Explore({ platform, link }: ExploreParams) {
+export default function Explore({ platform, link, explicit_content }: ExploreParams) {
     return (
         <div className={`font-bold pt-8 pb-5 ${link ? "hover:scale-99" : ""}`}
             onClick={() => { if (link) window.open(link, "_blank"); }}>
@@ -16,7 +16,7 @@ export default function Explore({ platform, link }: ExploreParams) {
             <div className="w-max group relative cursor-pointer">
                 <h1 className="relative z-10 px-2">
                     <div className="flex gap-2">
-                        Explore More {platform ? `on ${platform}` : ""}
+                        {explicit_content ? explicit_content : "Explore More"} {platform ? `on ${platform}` : ""}
                         <Maximize2 className="p-0.5" />
                     </div>
                 </h1>

@@ -4,8 +4,6 @@
 @custom-variant dark (&:is(.dark *));
 
 @theme inline {
-  /* --color-secondary: oklch(0.541 0.110 103.1); */
-  /* --color-primary: oklch(0.37 0.15 28); */
   --color-txt-tertiary: var(--txt-tertiary);
   --color-txt-secondary: var(--txt-secondary);
   --color-txt-primary: var(--txt-primary);
@@ -50,7 +48,6 @@
 }
 
 :root {
-
   /*lighter*/
   --txt-tertiary: oklch(0.6 0.10 260);
   --txt-secondary: oklch(0.75 0.110 103.1);
@@ -92,10 +89,9 @@
 }
 
 .dark {
+  /*Darker*/
   --txt-secondary: oklch(0.541 0.110 103.1);
-  /*Darker*/
   --txt-primary: oklch(0.37 0.15 28);
-  /*Darker*/
 
   --background: oklch(0.145 0 0);
   --foreground: oklch(0.985 0 0);
@@ -172,7 +168,6 @@
 }
 
 .blog-content blockquote {
-  /* background-color: rgb(211, 211, 211); */
   border-left: 3px solid var(--primary);
   padding: 10px 20px;
   margin-top: 1rem;

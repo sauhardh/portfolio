@@ -14,7 +14,11 @@ export type BlogInfo = {
     summary?: string,
     content: string,
     id: string,
-    // img?: string | null
+}
+
+export function slugify(title: string | undefined): string | null {
+    if (!title) return null;
+    return title.toLowerCase().trim().replace(/[^a-z0-9_-]/g, "-").replace(/^-+|-+$/g, "");
 }
 
 export default async function BlogsParser(url: string): Promise<BlogInfo[] | null> {
@@ -25,6 +29,7 @@ export default async function BlogsParser(url: string): Promise<BlogInfo[] | nul
     });
 
     try {
+        // const CORS = "https://cors-anywhere.com/"
         const feed = await parser.parseURL(url);
 
         return feed.items.map((item) => ({
@@ -33,8 +38,7 @@ export default async function BlogsParser(url: string): Promise<BlogInfo[] | nul
             pubDate: item.pubDate,
             summary: item.summary,
             content: item["content:encoded"],
-            id: item.title?.replace(/[^a-zA-Z0-9-_]/g, "-"),
-            // img: getFirstImage(item["content:encoded"])
+            id: slugify(item.title),
         })) as BlogInfo[];
     } catch (e) {
         console.warn("Failed to parse rss field of Blog for provided url: ", url, "Error: ", e);

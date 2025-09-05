@@ -1,8 +1,6 @@
 "use client"
 import * as React from "react"
 import { Library } from "lucide-react"
-import { Transition } from "motion/react";
-import * as motion from "motion/react-client";
 
 import Heading from "./items/heading"
 import Explore from "./items/explore"
@@ -14,11 +12,10 @@ type BlogsClientProps = {
     blogs: BlogInfo[]
 }
 
-
-
 export default function BlogsClient({ blogs }: BlogsClientProps) {
+
     return (
-        <div className="flex-col mt-30">
+        <div className="flex-col mt-10">
             <div className="flex justify-center">
                 <Heading heading="Blogs" Icon={Library} />
             </div>

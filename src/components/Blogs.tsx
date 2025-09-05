@@ -1,16 +1,11 @@
-import BlogsParser from "@/lib/blog";
-import { USER_BLOG_FEED_LINK } from "@/constants";
 import BlogsClient from "./BlogsClient";
-import { BlogInfo } from "@/lib/blog";
-
-function isBlogInfo(blog: BlogInfo | null): blog is BlogInfo {
-    return blog != null
-}
+import cacheBlogs, { cacheBlogsType, isBlogInfo } from "@/lib/cacheBlog";
 
 export default async function Blogs() {
-    const blogs: (BlogInfo | null)[] | null = await BlogsParser(USER_BLOG_FEED_LINK);
+    const cache: cacheBlogsType | null = await cacheBlogs();
+    if (!cache || cache.blogs.length <= 0) return <div>No Blogs Found Right Now!</div>
 
-    if (!blogs) return <div>No Blogs Found Right Now!</div>
+    const blogs = cache.blogs;
 
     return <BlogsClient blogs={blogs.filter(isBlogInfo)} />
 }

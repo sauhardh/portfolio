@@ -1,5 +1,4 @@
 "use client"
-
 import * as React from "react"
 import { FolderGit2 } from "lucide-react"
 import { motion } from "framer-motion"
@@ -29,8 +28,8 @@ export default function ProjectClient({ projects }: ProjectClientProps) {
                             initial={{ opacity: 0, y: 100 }}
                             whileInView={{ opacity: 1, y: 0 }}
                             exit={{ opacity: 0, y: 100 }}
-                            transition={{ duration: 0.6, delay: idx * 0.2 }}
-                            viewport={{ once: false, amount: 0.2 }}
+                            transition={{ duration: 0.4, delay: idx * 0.2 }}
+                            viewport={{ once: false, amount: 0.1 }}
                         >
                             < ProjectCard
                                 key={name}
