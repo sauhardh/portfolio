@@ -12,7 +12,9 @@ export type BlogInfo = {
     link: string,
     pubDate: string,
     summary?: string,
-    content: string
+    content: string,
+    id: string,
+    // img?: string | null
 }
 
 export default async function BlogsParser(url: string): Promise<BlogInfo[] | null> {
@@ -31,6 +33,8 @@ export default async function BlogsParser(url: string): Promise<BlogInfo[] | nul
             pubDate: item.pubDate,
             summary: item.summary,
             content: item["content:encoded"],
+            id: item.title?.replace(/[^a-zA-Z0-9-_]/g, "-"),
+            // img: getFirstImage(item["content:encoded"])
         })) as BlogInfo[];
     } catch (e) {
         console.warn("Failed to parse rss field of Blog for provided url: ", url, "Error: ", e);

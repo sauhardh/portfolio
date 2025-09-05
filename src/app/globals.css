@@ -6,6 +6,7 @@
 @theme inline {
   /* --color-secondary: oklch(0.541 0.110 103.1); */
   /* --color-primary: oklch(0.37 0.15 28); */
+  --color-txt-tertiary: var(--txt-tertiary);
   --color-txt-secondary: var(--txt-secondary);
   --color-txt-primary: var(--txt-primary);
 
@@ -49,10 +50,11 @@
 }
 
 :root {
+
+  /*lighter*/
+  --txt-tertiary: oklch(0.6 0.10 260);
   --txt-secondary: oklch(0.75 0.110 103.1);
-  /*lighter*/
   --txt-primary: oklch(0.65 0.15 28);
-  /*lighter*/
 
   --bottom-border: inset 0 -6px 0 0 var(--color-primary);
   --radius: 0.625rem;
@@ -138,26 +140,74 @@
   }
 }
 
-.blog-content-header h3,
-h1,
-h2 {
+
+.blog-content h1,
+.blog-content h2 {
   margin-top: 1rem;
   margin-bottom: 1rem;
+  font-size: 35px;
+  font-weight: 900;
 }
 
-.blog-content-paragraph p {
+.blog-content h3 {
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+  font-size: 30px;
+  font-weight: 700;
+}
+
+.blog-content h4 {
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+  font-size: 20px;
+  font-weight: 400;
+}
+
+.blog-content p {
   margin-bottom: 1rem;
 }
 
-.blog-content-anchor a {
+.blog-content a {
   text-decoration: underline;
 }
 
-.blog-content-quote blockquote {
+.blog-content blockquote {
   /* background-color: rgb(211, 211, 211); */
-  border-left: 3px solid aliceblue;
+  border-left: 3px solid var(--primary);
   padding: 10px 20px;
   margin-top: 1rem;
   margin-bottom: 1rem;
   font-style: italic;
+  color: var(--color-muted-foreground)
+}
+
+.dark .blog-content blockquote {
+  border-left: 3px solid var(--primary);
+}
+
+.blog-content ol {
+  list-style: decimal;
+  padding-left: 2rem;
+  margin-bottom: 25px;
+}
+
+.blog-content ul {
+  list-style: outside;
+  padding-left: 2rem;
+  margin-bottom: 25px;
+}
+
+.blog-content figcaption {
+  color: var(--color-muted-foreground);
+  text-align: center;
+  font-size: 15px;
+  margin-bottom: 20px;
+}
+
+.blog-content img,
+.blog-content figure {
+  padding: 20px 0;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
 }
