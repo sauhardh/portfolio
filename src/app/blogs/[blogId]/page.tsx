@@ -12,6 +12,28 @@ export async function generateStaticParams() {
     return blogs?.map((b) => ({ blogId: slugify(b.id) })) || [];
 }
 
+export async function generateMetadata({ params }: { params: { blogId: string } }) {
+    const cache: cacheBlogsType | null = await cacheBlogs();
+    const blog = cache?.blogs.find((blog) => slugify(blog.id) === params.blogId);
+    if (!blog) return { title: "Blog Not Found" }
+
+    return {
+        title: blog.title,
+        description: `Blog on ${blog.title} by Sauhardha Kafle`,
+        openGraph: {
+            title: blog.title,
+            description: `Read this article on ${blog.title}`,
+            url: blog.link,
+            type: "article"
+        },
+        twitter: {
+            card: "summary_large_image",
+            title: blog.title,
+            description: `Read this article on ${blog.title}`,
+        }
+    }
+}
+
 export const revalidate = 60 * 60 * 6; // revalidate at every 6hr.
 
 type Props = {
