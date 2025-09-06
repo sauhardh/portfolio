@@ -91,7 +91,8 @@
 .dark {
   /*Darker*/
   --txt-secondary: oklch(0.541 0.110 103.1);
-  --txt-primary: oklch(0.37 0.15 28);
+  /* --txt-primary: oklch(0.37 0.15 28); */
+  --txt-primary: rgba(99, 49, 47, 1);
 
   --background: oklch(0.145 0 0);
   --foreground: oklch(0.985 0 0);
@@ -205,4 +206,25 @@
   display: block;
   margin-left: auto;
   margin-right: auto;
+}
+
+@layer utilities {
+  @keyframes marquee {
+    0% {
+      transform: translateX(0.95%);
+    }
+
+    100% {
+      transform: translateX(-100%);
+    }
+  }
+
+  .animate-marquee {
+    animation: marquee 15s linear infinite;
+  }
+
+  .animate-marquee-reverse {
+    animation: marquee 15s linear infinite reverse;
+  }
+
 }

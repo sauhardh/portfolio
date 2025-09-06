@@ -7,7 +7,7 @@ import { LANGUAGE_COLORS } from "@/languages"
 export default function Hero(): React.JSX.Element {
     return (
         <div className="flex flex-col justify-center items-center">
-            <div className="border-4 border-b-10 w-[200px] h-[200px] rounded-full overflow-hidden">
+            <div className="border-4 border-b-10 border-border w-[200px] h-[200px] rounded-full overflow-hidden">
                 <Image
                     src="/profile.jpg"
                     alt="profile"
