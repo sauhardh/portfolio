@@ -6,7 +6,7 @@ import { USER_GITHUB_LINK, USER_LINKEDIN_LINK, USER_MAIL } from "@/constants"
 export default function Footer() {
     const year = new Date().getFullYear()
     return (
-        <div className="w-full cursor-pointer mt-25 mb-20">
+        <div className="w-full cursor-pointer mt-25 mb-15">
             <div className="border-b-2 border-border">
 
                 <div className="mx-10 flex justify-between items-center">

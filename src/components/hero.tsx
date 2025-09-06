@@ -6,7 +6,7 @@ import { LANGUAGE_COLORS } from "@/languages"
 
 export default function Hero(): React.JSX.Element {
     return (
-        <div className="flex flex-col justify-center items-center">
+        <div className="flex flex-row-reverse  justify-around items-center mb-30">
             <div className="border-4 border-b-10 border-border w-[200px] h-[200px] rounded-full overflow-hidden">
                 <Image
                     src="/profile.jpg"
@@ -17,7 +17,7 @@ export default function Hero(): React.JSX.Element {
                 />
             </div>
 
-            <div className="mt-20 cursor-pointer">
+            <div className="mt-15 cursor-pointer italic text-2xl font-regular">
                 {HERO_TEXT.map((each, i) => (
                     <span key={i}>
                         {

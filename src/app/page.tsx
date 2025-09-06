@@ -8,15 +8,18 @@ import { Tools } from "@/components/Tools";
 export default function Home() {
   return (
     <div className="font-fira p-0 m-0">
-      <div className="m-5">
+      <div>
         <Header />
         <main className="flex-col justify-center text-center my-10 mt-35">
           <Hero />
-          <Projects />
-          <Blogs />
+          <Tools />
+
+          <div className="flex flex-row justify-around items-center  my-25 mb-40 divide-x-2 divide-border">
+            <Projects />
+            <Blogs />
+          </div>
         </main>
       </div>
-      <Tools />
       <Footer />
     </div>
   );

@@ -15,12 +15,12 @@ type BlogsClientProps = {
 export default function BlogsClient({ blogs }: BlogsClientProps) {
 
     return (
-        <div className="flex-col mt-10">
+        <div className="flex-col mt-10 m-5">
             <div className="flex justify-center">
                 <Heading heading="Blogs" Icon={Library} />
             </div>
 
-            <div className="grid grid-rows-1 sm:grid-cols-2 gap-1 lg:grid-cols-3 mb-4 auto-rows-auto items-start">
+            <div className="grid grid-rows-1 sm:grid-cols-2 gap-1 lg:grid-cols-2 mb-4 auto-rows-auto items-start">
                 {
                     blogs.map((b, idx) => (
                         <BlogCard key={idx} blog={b} />

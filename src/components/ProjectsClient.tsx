@@ -15,12 +15,12 @@ type ProjectClientProps = {
 
 export default function ProjectClient({ projects }: ProjectClientProps) {
     return (
-        <div className="flex-col mt-30">
+        <div className="flex-col">
             <div className="flex justify-center">
                 <Heading heading="Projects" Icon={FolderGit2} />
             </div>
 
-            <div className="ml-50 snap-y">
+            <div className="ml-10 snap-y">
                 {
                     Object.entries(projects).map(([_, { name, url, description, language }], idx) => (
                         <motion.div
@@ -29,7 +29,7 @@ export default function ProjectClient({ projects }: ProjectClientProps) {
                             whileInView={{ opacity: 1, y: 0 }}
                             exit={{ opacity: 0, y: 100 }}
                             transition={{ duration: 0.4, delay: idx * 0.2 }}
-                            viewport={{ once: false, amount: 0.1 }}
+                            viewport={{ once: true }}
                         >
                             < ProjectCard
                                 key={name}
@@ -43,7 +43,7 @@ export default function ProjectClient({ projects }: ProjectClientProps) {
                 }
             </div>
 
-            <div className="flex justify-end">
+            <div className="flex justify-end mr-8">
                 <Explore platform="github" link={USER_GITHUB_LINK} />
             </div>
         </div >
