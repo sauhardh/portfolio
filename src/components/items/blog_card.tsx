@@ -34,7 +34,7 @@ export default function BlogCard({ blog }: BlogCardProps) {
 
     return (
         <div className="group border-1 border-border rounded-xs bg-card shadow-md p-4 w-full h-full content-center [grid-row:span_30] hover:scale-99">
-            <Link href={`/blogs/${blog.id}`}>
+            <Link href={`/blogs/${blog.id}`} prefetch={true}>
                 <div className="flex flex-col">
                     {
                         img &&

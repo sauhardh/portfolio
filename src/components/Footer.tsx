@@ -11,9 +11,9 @@ export default function Footer() {
 
                 <div className="mx-10 flex justify-between items-center">
                     <span className="text-muted-foreground">
-                        All rights reserved &copy; {year}
+                        All rights reserved &copy; Sauhardha Kafle | {year}
                     </span>
-                    <span className="flex gap-3 w-30 py-2">
+                    <span className="flex gap-4 w-30 py-2">
                         <a href={USER_GITHUB_LINK} target="_blank" rel="noopener noreferrer" className="w-30">
                             <GithubLogo />
                         </a>

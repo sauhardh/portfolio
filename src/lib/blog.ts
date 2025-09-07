@@ -30,7 +30,11 @@ export default async function BlogsParser(url: string): Promise<BlogInfo[] | nul
 
     try {
         // const CORS = "https://cors-anywhere.com/"
-        const feed = await parser.parseURL(url);
+        const res = await fetch(url, {
+            next: { revalidate: 60 * 60 * 6 },
+        });
+        const xml = await res.text();
+        const feed = await parser.parseString(xml);
 
         return feed.items.map((item) => ({
             title: item.title,
@@ -41,7 +45,7 @@ export default async function BlogsParser(url: string): Promise<BlogInfo[] | nul
             id: slugify(item.title),
         })) as BlogInfo[];
     } catch (e) {
-        console.warn("Failed to parse rss field of Blog for provided url: ", url, "Error: ", e);
+        console.warn("Failed to parse rss field of Blog for provided url: ", url, e);
         return null;
     }
 }

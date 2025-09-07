@@ -1,7 +1,6 @@
 "use client"
 import * as React from "react"
 import { Library } from "lucide-react"
-
 import Heading from "./items/heading"
 import Explore from "./items/explore"
 import { USER_BLOG_LINK } from "@/constants"
@@ -13,7 +12,6 @@ type BlogsClientProps = {
 }
 
 export default function BlogsClient({ blogs }: BlogsClientProps) {
-
     return (
         <div className="flex-col mt-10 m-5">
             <div className="flex justify-center">

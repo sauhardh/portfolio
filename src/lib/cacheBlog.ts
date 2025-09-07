@@ -15,8 +15,11 @@ export function isBlogInfo(blog: BlogInfo | null): blog is BlogInfo {
 export default async function cacheBlogs(): Promise<cacheBlogsType | null> {
     const now = Date.now();
     const revalidateMs = revalidate * 1000; // converting to ms
+    console.log("____***Checking Cache***_____");
+
     if (storedBlogs && storedBlogs.blogs.length > 0 && (now - storedBlogs.time) < revalidateMs) return storedBlogs;
 
+    console.log("____***CACHE MISS***_____");
     const blogs = await BlogsParser(USER_BLOG_FEED_LINK);
     if (!blogs) return null;
 
