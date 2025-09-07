@@ -14,7 +14,7 @@ export default function Home() {
           <Hero />
           <Tools />
 
-          <div className="flex flex-row justify-around items-center  my-25 mb-40 divide-x-2 divide-border">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-10 my-40 mb-48 divide-x-2 divide-border">
             <Projects />
             <Blogs />
           </div>

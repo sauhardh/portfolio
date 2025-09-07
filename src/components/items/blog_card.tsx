@@ -33,12 +33,12 @@ export default function BlogCard({ blog }: BlogCardProps) {
     }, []);
 
     return (
-        <div className="group border-1 border-border rounded-xs bg-card shadow-md p-4 w-full h-full content-center [grid-row:span_30] hover:scale-99">
+        <div className="group border-1 border-border rounded-xs bg-card shadow-md p-4 w-full h-full max-h-80 content-center [grid-row:span_30] hover:scale-99 ">
             <Link href={`/blogs/${blog.id}`} prefetch={true}>
-                <div className="flex flex-col">
+                <div className="flex flex-col overflow-scroll scrollbar-hidden">
                     {
                         img &&
-                        <Image src={img} alt={blog.title} className="w-max rounded-lg mb-3 self-center" width={150} height={200} />
+                        <Image src={img} alt={blog.title} className="w-max max-h-36 rounded-lg mb-3 self-center" width={150} height={200} />
                     }
                     <div className="flex flex-col h-max">
                         <h2 className="text-lg font-bold text-wrap max-w-xs self-center">{blog.title}</h2>
