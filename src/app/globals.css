@@ -243,6 +243,18 @@
     animation: marquee 15s linear infinite reverse;
   }
 
+  @media screen and (max-width: 750px) {
+    @keyframes marquee {
+      0% {
+        transform: translateX(0.10%);
+      }
+
+      100% {
+        transform: translateX(-100%);
+      }
+    }
+  }
+
 }
 
 @utility scrollbar-hidden {
