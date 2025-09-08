@@ -16,7 +16,6 @@ type BlogsClientProps = {
 }
 
 export default function BlogsClient({ blogs }: BlogsClientProps) {
-    console.log("num of blogs", blogs.length);
     const [currPage, setCurrPage] = useState<number>(0);
     const numOfPage: number = Math.ceil(blogs.length / NUM_OF_BLOG_CARDS);
 
@@ -33,7 +32,7 @@ export default function BlogsClient({ blogs }: BlogsClientProps) {
                     {[...Array(numOfPage)].map((_, i) => (
                         <button
                             key={i}
-                            className={`border-2 rounded-full w-full p-2 border-primary ${currPage == i ? "bg-txt-secondary" : "bg-transparent"} hover:scale-94 hover:border-txt-secondary`}
+                            className={`border-3 rounded-full w-full p-2 border-primary ${currPage == i ? "bg-txt-secondary" : "bg-transparent"} hover:scale-94 hover:border-txt-secondary`}
                             onClick={() => setCurrPage(i)}>
                         </button>
                     ))}
@@ -45,8 +44,8 @@ export default function BlogsClient({ blogs }: BlogsClientProps) {
 
             {/* BLOG CONTAINER */}
             <div className="flex flex-col justify-center flex-1 min-h-[500px]">
-                <div className="grid grid-rows-1 sm:grid-cols-2 gap-1 lg:grid-cols-2 mb-4 auto-rows-auto  h-full ">
-                    <AnimatePresence mode="wait">
+                <div className="grid grid-rows-1 sm:grid-cols-2 gap-1 lg:grid-cols-2 mb-4 auto-rows-auto h-full">
+                    <AnimatePresence mode="sync">
                         {
                             currentBlogs.map((b, idx) => (
                                 <motion.div

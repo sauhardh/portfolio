@@ -11,5 +11,9 @@ export default async function Projects() {
         Object.entries(PROJECTS).map(([repo_name, user_name]) => GitGetThisRepo(user_name, repo_name))
     );
 
+    if (!projects) {
+        return null;
+    }
+
     return <ProjectClient projects={projects.filter(isRepoInfo)} />
 }

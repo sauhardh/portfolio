@@ -160,6 +160,22 @@
   font-weight: 400;
 }
 
+@media screen and (max-width: 500px) {
+
+  .blog-content h1,
+  .blog-content h2 {
+    font-size: 25px;
+  }
+
+  .blog-content h3 {
+    font-size: 25px;
+  }
+
+  .blog-content h4 {
+    font-size: 15px;
+  }
+}
+
 .blog-content p {
   margin-bottom: 1rem;
 }

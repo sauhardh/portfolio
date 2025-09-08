@@ -13,8 +13,8 @@ export default function Explore({ platform, link, explicit_content }: ExplorePar
         <div className={`font-bold pt-8 pb-5 ${link ? "hover:scale-99" : ""}`}
             onClick={() => { if (link) window.open(link, "_blank"); }}>
 
-            <div className="w-max group relative cursor-pointer">
-                <h1 className="relative z-10 px-2">
+            <div className="w-max group relative cursor-pointer  max-[250px]:text-[11px] text-xs sm:text-base">
+                <h1 className="relative z-10 sm:px-2">
                     <div className="flex gap-2">
                         {explicit_content ? explicit_content : "Explore More"} {platform ? `on ${platform}` : ""}
                         <ArrowUpRight className="p-0.5" />

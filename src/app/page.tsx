@@ -14,7 +14,7 @@ export default function Home() {
           <Hero />
           <Tools />
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-10 my-40 mb-48 divide-x-2 divide-border">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-10 my-20 mb-32  sm:my-40 sm:mb-48 divide-x-2 divide-border">
             <Projects />
             <Blogs />
           </div>

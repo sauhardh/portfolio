@@ -54,12 +54,10 @@ export default async function BlogPost(props: Props) {
     if (!blog) return notFound();
     return (
         <div className="flex flex-col justify-center items-center mb-10">
-            <div className="flex justify-center pt-15 pb-5">
-                <Heading heading={blog.title} class_name="font-bold text-4xl items-center" border_color="bg-txt-tertiary" />
+            <div className="flex justify-center pt-15 pb-5 text-wrap">
+                <Heading heading={blog.title} class_name="font-bold items-center" border_color="bg-txt-tertiary" />
             </div>
-
-            <div className="w-full text-start px-60 pb-30 blog-content" dangerouslySetInnerHTML={{ __html: blog.content ?? "" }} />
-
+            <div className="w-full text-sm max-[350px]:text-xs sm:text-base text-start px-10 sm:px-30 md:px-60 pb-30 blog-content" dangerouslySetInnerHTML={{ __html: blog.content ?? "" }} />
             <div className="flex justify-around w-full">
                 <GoBack />
                 <Explore platform="medium" link={blog.link} explicit_content="Read this" />
