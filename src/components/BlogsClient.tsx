@@ -1,6 +1,6 @@
 "use client"
 import * as React from "react"
-import { useState, useEffect, useMemo } from "react"
+import { useState, useMemo } from "react"
 import { Library } from "lucide-react"
 import Heading from "./items/heading"
 import Explore from "./items/explore"

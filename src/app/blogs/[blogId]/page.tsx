@@ -43,7 +43,7 @@ export async function generateMetadata(props: Props) {
     }
 }
 
-export const revalidate = 60 * 60 * 6; // revalidate at every 6hr.
+export const revalidate = 21600; // revalidate at every 6hr.
 
 export default async function BlogPost(props: Props) {
     const { blogId } = await props.params;

@@ -6,7 +6,7 @@ export interface RepoInfo {
 }
 
 export default async function GitGetThisRepo(user_name: string, repo_name: string): Promise<RepoInfo | null> {
-    let url: string = `https://api.github.com/repos/${user_name}/${repo_name}`;
+    const url: string = `https://api.github.com/repos/${user_name}/${repo_name}`;
 
     try {
         const response = await fetch(url, {

@@ -35,7 +35,7 @@ export default function BlogCard({ blog }: BlogCardProps) {
         }
         setImage(img);
         setDate(date);
-    }, []);
+    }, [blog.content, blog.pubDate]);
 
     return (
         <div className="group border-1 border-border rounded-xs bg-card shadow-md p-4 w-full h-full max-h-80 content-center [grid-row:span_30] hover:scale-99 ">

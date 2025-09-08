@@ -22,7 +22,7 @@ export default function ProjectClient({ projects }: ProjectClientProps) {
 
             <div className="ml-10 snap-y">
                 {
-                    Object.entries(projects).map(([_, { name, url, description, language }], idx) => (
+                    Object.entries(projects).map(([, { name, url, description, language }], idx) => (
                         <motion.div
                             key={name}
                             initial={{ opacity: 0, y: 100 }}

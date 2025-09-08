@@ -31,7 +31,7 @@ export default async function BlogsParser(url: string): Promise<BlogInfo[] | nul
     try {
         // const CORS = "https://cors-anywhere.com/"
         const res = await fetch(url, {
-            next: { revalidate: 60 * 60 * 6 },
+            next: { revalidate: 21600 },
         });
         const xml = await res.text();
         const feed = await parser.parseString(xml);

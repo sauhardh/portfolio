@@ -1,6 +1,6 @@
 import * as React from "react"
 import SayMyName from "./items/my_name"
-import { GithubLogo, GmailLogo, LinkedInLogo, JavaScriptLogo, NodeJSLogo } from "./items/logos"
+import { GithubLogo, GmailLogo, LinkedInLogo } from "./items/logos"
 import { USER_GITHUB_LINK, USER_LINKEDIN_LINK, USER_MAIL } from "@/constants"
 
 export default function Footer() {

@@ -6,11 +6,13 @@ const nextConfig: NextConfig = {
     remotePatterns: [
       {
         protocol: "https",
-        hostname: "cdn-images-1.medium.com"
+        hostname: "cdn-images-1.medium.com",
+        pathname: "/**",
       },
       {
         protocol: "https",
-        hostname: "medium.com"
+        hostname: "medium.com",
+        pathname: "/**"
       }
     ]
   }
