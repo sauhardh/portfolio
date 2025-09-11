@@ -243,7 +243,7 @@
     animation: marquee 15s linear infinite reverse;
   }
 
-  @media screen and (max-width: 750px) {
+  @media screen and (max-width: 1000px) {
     @keyframes marquee {
       0% {
         transform: translateX(0.10%);

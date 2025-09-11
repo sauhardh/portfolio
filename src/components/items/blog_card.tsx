@@ -49,7 +49,7 @@ export default function BlogCard({ blog }: BlogCardProps) {
                         <h2 className="text-sm sm:text-lg font-bold text-wrap max-w-xs self-center">{blog.title}</h2>
                         <div className="flex gap-2 text-xs text-muted-foreground mt-4 justify-around">
                             <div className="flex gap-2">
-                                <p className="underline text-xs sm:text-base">Published on</p>
+                                <p className="underline text-xs">Published on</p>
                                 <span>{date}</span>
                             </div>
                             <div className="opacity-0 group-hover:opacity-100 transition-all delay-500 text-txt-tertiary underline font-bold">
