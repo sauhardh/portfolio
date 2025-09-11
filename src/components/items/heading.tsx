@@ -18,7 +18,7 @@ export default function Heading({ heading, Icon, class_name, border_color }: Hea
     return (
         <div className={`font-bold pt-8 pb-5 ${class_name} `}>
             <div className="w-full sm:w-max group relative cursor-pointer px-2">
-                <div className="flex gap-2 relative z-10 text-sm sm:text-base">
+                <div className="flex gap-2 relative z-10 text-sm sm:text-base lg:text-xl">
                     <h1>{heading}</h1>
                     {Icon && <Icon />}
                 </div>
