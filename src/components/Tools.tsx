@@ -18,7 +18,7 @@ export function Tools() {
             return (
                 <div className="flex justify-around min-w-screen">
                     {LOGOS.map((Logo, i) => (
-                        <span key={i + offset} className="h-10 px-2 md:w-14 md:h-14 lg:w-16 lg:h-16 max-[500px]:px-1 flex items-center justify-center filter sepia contrast-50 brightness-100 grayscale">
+                        <span key={i + offset} className="h-10 md:w-14 md:h-14 lg:w-16 lg:h-16 max-[500px]:px-1 flex items-center justify-center filter sepia contrast-50 brightness-100 grayscale">
                             <Logo />
                         </span>
                     ))}
