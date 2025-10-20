@@ -1,4 +1,5 @@
 import Parser from "rss-parser"
+import he from "he";
 
 type CustomFeed = unknown;
 type CustomItem = {
@@ -24,7 +25,7 @@ export function slugify(title: string | undefined): string | null {
 export default async function BlogsParser(url: string): Promise<BlogInfo[] | null> {
     const parser: Parser<CustomFeed, CustomItem> = new Parser({
         customFields: {
-            item: [["content:encoded"], ["summary"], ["description"]],
+            item: [["content:encoded", "content"], ["summary"], ["description"]],
         }
     });
 
@@ -37,12 +38,12 @@ export default async function BlogsParser(url: string): Promise<BlogInfo[] | nul
         const feed = await parser.parseString(xml);
 
         return feed.items.map((item) => ({
-            title: item.title,
-            link: item.link,
-            pubDate: item.pubDate,
-            summary: item.summary,
-            content: item["content:encoded"],
-            id: slugify(item.title),
+            title: he.decode(item.title || ""),
+            link: he.decode(item.link || ""),
+            pubDate: he.decode(item.pubDate || ""),
+            summary: he.decode(item.summary || ""),
+            content: he.decode(item["content:encoded"] || ""),
+            id: slugify(item.title) || Math.random().toString(36).slice(2, 10),
         })) as BlogInfo[];
     } catch (e) {
         console.warn("Failed to parse rss field of Blog for provided url: ", url, e);
