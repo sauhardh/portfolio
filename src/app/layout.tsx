@@ -2,6 +2,8 @@ import type { Metadata } from "next";
 import { Alfa_Slab_One, Fira_Sans } from "next/font/google";
 import "./globals.css";
 import { ThemeProvider } from "@/lib/theme-provider";
+import { SpeedInsights } from "@vercel/speed-insights/next";
+import { Analytics } from "@vercel/analytics/next";
 
 const alfaSans = Alfa_Slab_One({
   variable: "--font-alfa-slab-one",
