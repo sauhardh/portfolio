@@ -51,9 +51,9 @@ export default function BlogsClient({ blogs }: BlogsClientProps) {
                                 <motion.div
                                     className="w-full h-full"
                                     key={b.link}
-                                    initial={{ opacity: 0, y: 100 }}
+                                    initial={{ opacity: 0, y: -100 }}
                                     animate={{ opacity: 1, y: 0 }}
-                                    exit={{ opacity: 0, y: -100 }}
+                                    exit={{ opacity: 0, y: 500 }}
                                     transition={{ duration: 0.3 }}
                                 >
                                     <BlogCard key={idx} blog={b} />
