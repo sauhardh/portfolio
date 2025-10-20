@@ -1,11 +1,11 @@
 import * as React from "react";
 import Heading from "@/components/items/heading";
-import BlogsParser from "@/lib/blog";
+import BlogsParser, { BlogInfo } from "@/lib/blog";
 import { USER_BLOG_FEED_LINK } from "@/constants";
 import notFound from "./notFound";
 import { slugify } from "@/lib/blog";
 import Explore from "@/components/items/explore";
-import cacheBlogs, { cacheBlogsType } from "@/lib/cacheBlog";
+// import cacheBlogs, { cacheBlogsType } from "@/lib/cacheBlog";
 import GoBack from "@/components/items/go_back";
 
 type Props = {
@@ -22,8 +22,10 @@ export async function generateStaticParams() {
 export async function generateMetadata(props: Props) {
     const { blogId } = await props.params;
 
-    const cache: cacheBlogsType | null = await cacheBlogs();
-    const blog = cache?.blogs.find((blog) => slugify(blog.id) === blogId);
+    // const cache: cacheBlogsType | null = await cacheBlogs();
+    // const blog = cache?.blogs.find((blog) => slugify(blog.id) === blogId);
+    const blogs: BlogInfo[] | null = await BlogsParser(USER_BLOG_FEED_LINK);
+    const blog = blogs?.find((blog) => slugify(blog.id) === blogId);
     if (!blog) return { title: "Blog Not Found" }
 
     return {
@@ -48,16 +50,18 @@ export const revalidate = 21600; // revalidate at every 6hr.
 export default async function BlogPost(props: Props) {
     const { blogId } = await props.params;
 
-    const cache: cacheBlogsType | null = await cacheBlogs();
-    const blog = cache && cache.blogs.find(blog => slugify(blog.id) === blogId);
-
+    // const cache: cacheBlogsType | null = await cacheBlogs();
+    // const blog = cache && cache.blogs.find(blog => slugify(blog.id) === blogId);
+    const blogs: BlogInfo[] | null = await BlogsParser(USER_BLOG_FEED_LINK);
+    const blog = blogs?.find((blog) => slugify(blog.id) === blogId);
     if (!blog) return notFound();
+
     return (
         <div className="flex flex-col justify-center items-center mb-10">
             <div className="flex justify-center pt-15 pb-5 text-wrap">
                 <Heading heading={blog.title} class_name="font-bold items-center" border_color="bg-txt-tertiary" />
             </div>
-            <div className="w-full text-sm max-[350px]:text-xs sm:text-base text-start px-10 sm:px-30 md:px-60 pb-30 blog-content break-words" dangerouslySetInnerHTML={{ __html: blog.content ?? "" }} />
+            <div className="w-full text-sm max-[350px]:text-xs sm:text-base text-start px-11 sm:px-30 [@media(min-width:1024px)]:px-50 pb-10 blog-content break-words" dangerouslySetInnerHTML={{ __html: blog.content ?? "" }} />
             <div className="flex justify-around w-full">
                 <GoBack />
                 <Explore platform="medium" link={blog.link} explicit_content="Read this" />

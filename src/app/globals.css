@@ -7,6 +7,7 @@
   --color-txt-tertiary: var(--txt-tertiary);
   --color-txt-secondary: var(--txt-secondary);
   --color-txt-primary: var(--txt-primary);
+  --color-code-background: var(--code-background);
 
   --color-background: var(--background);
   --color-foreground: var(--foreground);
@@ -52,6 +53,7 @@
   --txt-tertiary: oklch(0.6 0.10 260);
   --txt-secondary: oklch(0.75 0.110 103.1);
   --txt-primary: oklch(0.65 0.15 28);
+  --code-background: rgb(241, 241, 241);
 
   --bottom-border: inset 0 -6px 0 0 var(--color-primary);
   --radius: 0.625rem;
@@ -93,6 +95,7 @@
   --txt-secondary: oklch(0.541 0.110 103.1);
   /* --txt-primary: oklch(0.37 0.15 28); */
   --txt-primary: rgba(99, 49, 47, 1);
+  --code-background: rgb(45, 43, 43);
 
   --background: oklch(0.145 0 0);
   --foreground: oklch(0.985 0 0);
@@ -137,7 +140,6 @@
   }
 }
 
-
 .blog-content h1,
 .blog-content h2 {
   margin-top: 1rem;
@@ -150,14 +152,14 @@
   margin-top: 1rem;
   margin-bottom: 1rem;
   font-size: 30px;
-  font-weight: 700;
+  font-weight: 800;
 }
 
 .blog-content h4 {
   margin-top: 1rem;
   margin-bottom: 1rem;
-  font-size: 20px;
-  font-weight: 400;
+  font-size: 25px;
+  font-weight: 700;
 }
 
 @media screen and (max-width: 500px) {
@@ -223,6 +225,34 @@
   margin-left: auto;
   margin-right: auto;
 }
+
+.blog-content pre {
+  font-family: monospace;
+  background-color: var(--color-code-background);
+  padding: 30px;
+  margin: 10px;
+  border-radius: 15px;
+  overflow-x: scroll;
+
+  -ms-overflow-style: none;
+  scrollbar-width: thin;
+  scrollbar-color: var(--border) transparent;
+}
+
+.blog-content pre::-webkit-scrollbar {
+  height: 6px;
+  width: 6px;
+}
+
+.blog-content pre::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.blog-content pre::-webkit-scrollbar-thumb {
+  background-color: var(--border);
+  border-radius: 9999px;
+}
+
 
 @layer utilities {
   @keyframes marquee {

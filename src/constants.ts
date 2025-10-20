@@ -17,7 +17,7 @@ const PROJECTS: Record<string, string> = {
     "torrex": `${GITHUB_USERNAME}`,
     "CodeRoom": `${GITHUB_USERNAME}`,
     "zizz": `${GITHUB_USERNAME}`,
-    "dlm_rust": `${GITHUB_USERNAME}`,
+    "nutshell": `${GITHUB_USERNAME}`,
     "metrics": `${GITHUB_USERNAME}`
 }
 

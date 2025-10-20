@@ -1,3 +1,7 @@
+/**
+ * NOTE: DO NOT MAKE THIS COMPONENT "PUBLIC"
+ * As it calls the github API which requires "Github Token" from environment variable
+ */
 import { PROJECTS } from "@/constants";
 import GitGetThisRepo, { RepoInfo } from "@/lib/github";
 import ProjectClient from "./ProjectsClient";
