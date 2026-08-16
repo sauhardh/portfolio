@@ -6,7 +6,7 @@ import { LANGUAGE_COLORS } from "@/languages";
 
 export default function Hero(): React.JSX.Element {
   return (
-    <div className="w-full mb-30 px-10 sm:px-28 md:px-52">
+    <div className="w-full mb-30 px-10 sm:px-28 md:px-52 mt-10">
       <div className="grid grid-cols-[1fr_3fr_1fr] sm:grid-cols-[1fr_2fr_1fr]">
         {/* Row 1: Top spacing */}
         <div className="border-r-2 border-border py-6 sm:py-10" />
