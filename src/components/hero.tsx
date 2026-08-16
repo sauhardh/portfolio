@@ -6,12 +6,12 @@ import { LANGUAGE_COLORS } from "@/languages";
 
 export default function Hero(): React.JSX.Element {
   return (
-    <div className="w-full mb-30">
+    <div className="w-full mb-30 px-10 sm:px-28 md:px-52">
       <div className="grid grid-cols-[1fr_3fr_1fr] sm:grid-cols-[1fr_2fr_1fr]">
         {/* Row 1: Top spacing */}
-        <div className="border-r-2 border-border py-4 sm:py-6" />
-        <div className="border-r-2 border-border py-4 sm:py-6" />
-        <div className="py-4 sm:py-6" />
+        <div className="border-r-2 border-border py-6 sm:py-10" />
+        <div className="border-r-2 border-border py-6 sm:py-10" />
+        <div className="py-6 sm:py-10" />
 
         {/* Row 2: Avatar */}
         <div className="border-t-2 border-r-2 border-border" />
@@ -30,13 +30,13 @@ export default function Hero(): React.JSX.Element {
         <div className="border-t-2 border-border" />
 
         {/* Row 3: Middle gap */}
-        <div className="border-r-2 border-border py-3 sm:py-4 flex items-center">
+        <div className="border-r-2 border-border py-4 sm:py-6 flex items-center">
           <div className="w-full border-t-2 border-border" />
         </div>
-        <div className="border-r-2 border-border py-3 sm:py-4 flex items-center">
+        <div className="border-r-2 border-border py-4 sm:py-6 flex items-center">
           <div className="w-full border-t-2 border-border" />
         </div>
-        <div className="py-3 sm:py-4 flex items-center">
+        <div className="py-4 sm:py-6 flex items-center">
           <div className="w-full border-t-2 border-border" />
         </div>
 
@@ -76,9 +76,9 @@ export default function Hero(): React.JSX.Element {
         <div className="border-border" />
 
         {/* Row 5: Bottom spacing */}
-        <div className="border-t-2 border-r-2 border-border py-4 sm:py-6" />
-        <div className="border-t-2 border-r-2 border-border py-4 sm:py-6" />
-        <div className="border-t-2 border-border py-4 sm:py-6" />
+        <div className="border-t-2 border-r-2 border-border py-6 sm:py-10" />
+        <div className="border-t-2 border-r-2 border-border py-6 sm:py-10" />
+        <div className="border-t-2 border-border py-6 sm:py-10" />
       </div>
     </div>
   );
