@@ -2,9 +2,10 @@ import BlogsClient from "./BlogsClient";
 import cacheBlogs, { cacheBlogsType, isBlogInfo } from "@/lib/cacheBlog";
 
 export default async function Blogs() {
-    const cache: cacheBlogsType | null = await cacheBlogs();
-    if (!cache || cache.blogs.length <= 0) return null
-    const blogs = cache.blogs;
+  const cache: cacheBlogsType | null = await cacheBlogs();
+  if (!cache || cache.blogs.length <= 0) return null;
+  const blogs = cache.blogs;
 
-    return <BlogsClient blogs={blogs.filter(isBlogInfo)} />
+  return <BlogsClient blogs={blogs.filter(isBlogInfo)} />;
 }
+

@@ -10,15 +10,15 @@ export default function Home() {
     <div className="font-fira p-0 m-0">
       <div>
         <Header />
-        <main className="flex-col justify-center text-center my-10 mt-35">
+        <main className="flex-col justify-center text-center my-10 mt-0">
           <Hero />
-          <Tools />
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-10 my-20 mb-32  sm:my-40 sm:mb-48 divide-x-2 divide-border">
             <Projects />
             <Blogs />
           </div>
         </main>
+        <Tools />
       </div>
 
       <Footer />

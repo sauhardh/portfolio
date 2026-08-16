@@ -1,5 +1,5 @@
 /**
- * NOTE: DO NOT MAKE THIS COMPONENT "PUBLIC"
+ * NOTE: DO NOT MAKE THIS COMPONENT "CLIENT"
  * As it calls the github API which requires "Github Token" from environment variable
  */
 import { PROJECTS } from "@/constants";
@@ -7,17 +7,19 @@ import GitGetThisRepo, { RepoInfo } from "@/lib/github";
 import ProjectClient from "./ProjectsClient";
 
 function isRepoInfo(project: RepoInfo | null): project is RepoInfo {
-    return project != null
+  return project != null;
 }
 
 export default async function Projects() {
-    const projects = await Promise.all(
-        Object.entries(PROJECTS).map(([repo_name, user_name]) => GitGetThisRepo(user_name, repo_name))
-    );
+  const projects = await Promise.all(
+    Object.entries(PROJECTS).map(([repo_name, user_name]) =>
+      GitGetThisRepo(user_name, repo_name),
+    ),
+  );
 
-    if (!projects) {
-        return null;
-    }
+  if (!projects) {
+    return null;
+  }
 
-    return <ProjectClient projects={projects.filter(isRepoInfo)} />
+  return <ProjectClient projects={projects.filter(isRepoInfo)} />;
 }

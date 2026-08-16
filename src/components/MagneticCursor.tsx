@@ -6,9 +6,10 @@ type MangeticCursorType = {
     text: string,
     children?: React.ReactNode
     class_name?: string
+    disabled?: boolean
 }
 
-export default function MagneticCursor({ text, children, class_name }: MangeticCursorType) {
+export default function MagneticCursor({ text, children, class_name, disabled }: MangeticCursorType) {
     const [pos, setPos] = useState({ x: 0, y: 0 });
     const [show, setShow] = useState<boolean>(false);
 
@@ -41,7 +42,7 @@ export default function MagneticCursor({ text, children, class_name }: MangeticC
         >
             {children}
             {
-                show ?
+                show && !disabled ?
                     <div className="border-3 border-border rounded-md bg-txt-primary px-2" style={{ position: "fixed", top: pos.y, left: pos.x, transform: "translate(-50%, -70%)", pointerEvents: "none" }}>
                         {text || "⬤"}
                     </div>
