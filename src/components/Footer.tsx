@@ -6,7 +6,7 @@ import { USER_GITHUB_LINK, USER_LINKEDIN_LINK, USER_MAIL } from "@/constants";
 export default function Footer() {
   const year = new Date().getFullYear();
   return (
-    <div className="w-full cursor-pointer mt-25 mb-10 sm:mb-24">
+    <div className="w-full cursor-pointer mt-48 mb-10 sm:mb-24">
       <div className="border-b-2 border-border">
         <div className="mx-10 flex text-[10px] sm:text-sm md:text-base flex-col-reverse sm:flex-row  justify-between items-center">
           <span className="text-muted-foreground">

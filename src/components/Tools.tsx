@@ -87,7 +87,7 @@ export function Tools() {
   }
   return (
     <MagneticCursor text="Few among the tools I play with">
-      <div className="flex flex-col justify-center items-center gap-4 sm:gap-6 mt-5">
+      <div className="flex flex-col justify-center items-center gap-4 sm:gap-6 my-12 sm:my-44 ">
         <div className="min-w-screen flex justify-center items-center">
           <Heading heading="Tools" />
         </div>
